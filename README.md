@@ -8,31 +8,32 @@ where you've stopped tracking it.
 
 ## Why
 
-LLMs let you ship code you never actually understood, built on requirements
-nobody validated — pushing the comprehension burden onto whoever reviews it
-now, and onto whoever maintains it later, once it's too late to cheaply
-recover. Research on this ("comprehension debt") names four ways it
-accumulates:
+Prompt to accept to next. No hypothesis, no explanation, no idea what
+breaks if the requirement was wrong — just code that ships and a
+comprehension bill that lands on you or whoever inherits it. The evidence
+that this actually costs something is no longer anecdotal:
 
-- **AI-as-black-box acceptance** — merging output you couldn't explain if asked.
-- **Context-mismatch debt** — code that's correct for a requirement nobody checked was the right one.
-- **Dependency-induced atrophy** — the muscle for solving it yourself quietly weakens.
-- **Verification-bypass** — "it works" standing in for "I know why it works."
+- **A 52-developer RCT (Shen & Tamkin, Anthropic)** found the AI-assisted
+  group scored **17% lower** on comprehension of their own code, measured
+  minutes later (d=0.738, p=0.01) — with no time savings to show for it, and
+  the largest gap on debugging specifically. The single strongest predictor
+  of outcome wasn't whether someone used AI, it was whether they asked
+  follow-up questions instead of going straight from prompt to accept.
+- **A metacognitive-script study** put a number on the fix: engineers gated
+  by a teach-back step failed a later AI-blackout maintenance task on their
+  own code **39%** of the time, versus **77%** for the ungated group — for
+  about 14 minutes of friction per gate.
+- **A field study of professional developers** (Huang, Reyna et al.,
+  Cornell/UCSD) found the ones who actually ship reliably "don't vibe, they
+  control" — roughly 69% review every AI-generated change, 75% read every
+  line before it merges.
 
-A metacognitive-script study measured the cost of skipping this: engineers
-who used AI ungated failed a later AI-blackout maintenance task on their own
-code **77% of the time**, versus **39%** for a group forced through a
-teach-back gate first — at roughly 14 minutes of friction per gate. This
-tool is the same bet, moved one step earlier: instead of explaining the
-diff after the model writes it, you state the problem and your hypothesis
-*before* it does, so the prompt itself has to be grounded in something you
-actually thought through.
-
-Past correctness, the point is who you stay as while doing this job: an
-engineer who can explain not just why a change works but why it's wrong, or
-one whose name is on code they never really held in their head — and a
-team's trust erodes the same way individual comprehension does, quietly,
-one ungated merge at a time.
+This tool takes that same control and moves it one step earlier: instead
+of explaining the diff after the model writes it, you state the problem
+and your hypothesis *before* it does. No stated hypothesis, no prompt. The
+payoff isn't just fewer bugs — it's staying the kind of engineer who can
+explain why a change is right *and* why it's wrong, on code that's still
+actually yours.
 
 ## Install
 
