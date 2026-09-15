@@ -34,10 +34,21 @@ that this actually costs something is no longer anecdotal:
 
 This tool takes that same control and moves it one step earlier: instead
 of explaining the diff after the model writes it, you state the problem
-and your hypothesis *before* it does. No stated hypothesis, no prompt. The
-payoff isn't just fewer bugs — it's staying the kind of engineer who can
-explain why a change is right *and* why it's wrong, on code that's still
-actually yours.
+and your hypothesis *before* it does. No stated hypothesis, no prompt.
+
+The payoff isn't just fewer bugs:
+
+- **The model does better work.** A stated hypothesis is a sharper target
+  than a bare prompt — it gives the model something concrete to confirm,
+  refute, or push back on, instead of guessing at intent from a one-line ask.
+- **You stay in the loop, not just in the room.** Reviewing output someone
+  else generated is a different job from thinking through a problem
+  yourself, and only one of those keeps you sharp, engaged, and growing —
+  the other is just rubber-stamping on a schedule.
+- **Your team's trust in your name on a PR stays earned.** "I don't know
+  why this works" code and unvalidated requirements are cheap to write and
+  expensive to discover later, usually by someone else, usually at the
+  worst time.
 
 ## Install
 
