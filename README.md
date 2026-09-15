@@ -13,25 +13,22 @@ breaks if the requirement was wrong — just code that ships and a
 comprehension bill that lands on you or whoever inherits it. The evidence
 that this actually costs something is no longer anecdotal:
 
-- **A 52-developer RCT** — Shen & Tamkin, Anthropic (Jan 2026) — found the
-  AI-assisted group scored **17% lower** on comprehension of their own code,
-  measured minutes later (d=0.738, p=0.01) — with no time savings to show
-  for it, and the largest gap on debugging specifically. The single
-  strongest predictor of outcome wasn't whether someone used AI, it was
-  whether they asked follow-up questions instead of going straight from
-  prompt to accept.
-- **"Mitigating Epistemic Debt... using Metacognitive Scripts"**
-  (arXiv:2602.20206) put a number on the fix: engineers gated by a
-  teach-back step failed a later AI-blackout maintenance task on their own
-  code **39%** of the time, versus **77%** for the ungated group — for
-  about 14 minutes of friction per gate.
-- **A field study of professional developers** — Huang, Reyna et al.,
-  Cornell/UCSD (arXiv:2512.14012); 13 field observations plus a
-  99-developer survey — found the ones who actually ship reliably "don't
-  vibe, they control": roughly 69% review every AI-generated change, 75%
-  read every line before it merges.
+- **A 52-developer RCT** [[1]](#sources) found the AI-assisted group scored
+  **17% lower** on comprehension of their own code, measured minutes later
+  (d=0.738, p=0.01) — with no time savings to show for it, and the largest
+  gap on debugging specifically. The single strongest predictor of outcome
+  wasn't whether someone used AI, it was whether they asked follow-up
+  questions instead of going straight from prompt to accept.
+- **A metacognitive-script study** [[2]](#sources) put a number on the fix:
+  engineers gated by a teach-back step failed a later AI-blackout
+  maintenance task on their own code **39%** of the time, versus **77%**
+  for the ungated group — for about 14 minutes of friction per gate.
+- **A field study of professional developers** [[3]](#sources) — 13 field
+  observations plus a 99-developer survey — found the ones who actually
+  ship reliably "don't vibe, they control": roughly 69% review every
+  AI-generated change, 75% read every line before it merges.
 - **"Comprehension Debt in GenAI-Assisted Software Engineering Projects"**
-  (arXiv:2604.13277) names the failure mode this tool targets and its four
+  [[4]](#sources) names the failure mode this tool targets and its four
   accumulation patterns: AI-as-black-box acceptance, context-mismatch debt,
   dependency-induced atrophy, verification-bypass.
 
@@ -76,3 +73,15 @@ hooks config.
 
 See [go.mod](go.mod) for the module layout: `cmd/think` is the CLI entrypoint,
 `internal/{state,config,hook,audit,paste}` hold the logic.
+
+## Sources
+
+1. Shen & Tamkin, Anthropic (Jan 2026) — 52-developer RCT on AI-assisted
+   coding and code comprehension. No public URL available at time of
+   writing; see Anthropic's research index: <https://www.anthropic.com/research>
+2. "Mitigating Epistemic Debt in AI-Assisted Programming using
+   Metacognitive Scripts" — <https://arxiv.org/abs/2602.20206>
+3. Huang, Reyna et al. (Cornell/UCSD), "Professional developers don't vibe,
+   they control" — <https://arxiv.org/abs/2512.14012>
+4. "Comprehension Debt in GenAI-Assisted Software Engineering Projects" —
+   <https://arxiv.org/abs/2604.13277>
