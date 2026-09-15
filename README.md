@@ -76,9 +76,9 @@ See [go.mod](go.mod) for the module layout: `cmd/think` is the CLI entrypoint,
 
 ## Sources
 
-1. Shen & Tamkin, Anthropic (Jan 2026) — 52-developer RCT on AI-assisted
-   coding and code comprehension. No public URL available at time of
-   writing; see Anthropic's research index: <https://www.anthropic.com/research>
+1. Shen & Tamkin, Anthropic, "How AI assistance impacts the formation of
+   coding skills" (Jan 2026) — <https://www.anthropic.com/research/AI-assistance-coding-skills>
+   · paper: <https://arxiv.org/abs/2601.20245>
 2. "Mitigating Epistemic Debt in AI-Assisted Programming using
    Metacognitive Scripts" — <https://arxiv.org/abs/2602.20206>
 3. Huang, Reyna et al. (Cornell/UCSD), "Professional developers don't vibe,
