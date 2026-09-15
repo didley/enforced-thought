@@ -8,10 +8,31 @@ where you've stopped tracking it.
 
 ## Why
 
-LLMs make it easy to ship code you don't actually understand, built on
-requirements nobody validated. This gate forces a stated hypothesis before
-each prompt goes to the model — cheap insurance against comprehension debt,
-and a sharper target for the model to work against.
+LLMs let you ship code you never actually understood, built on requirements
+nobody validated — pushing the comprehension burden onto whoever reviews it
+now, and onto whoever maintains it later, once it's too late to cheaply
+recover. Research on this ("comprehension debt") names four ways it
+accumulates:
+
+- **AI-as-black-box acceptance** — merging output you couldn't explain if asked.
+- **Context-mismatch debt** — code that's correct for a requirement nobody checked was the right one.
+- **Dependency-induced atrophy** — the muscle for solving it yourself quietly weakens.
+- **Verification-bypass** — "it works" standing in for "I know why it works."
+
+A metacognitive-script study measured the cost of skipping this: engineers
+who used AI ungated failed a later AI-blackout maintenance task on their own
+code **77% of the time**, versus **39%** for a group forced through a
+teach-back gate first — at roughly 14 minutes of friction per gate. This
+tool is the same bet, moved one step earlier: instead of explaining the
+diff after the model writes it, you state the problem and your hypothesis
+*before* it does, so the prompt itself has to be grounded in something you
+actually thought through.
+
+Past correctness, the point is who you stay as while doing this job: an
+engineer who can explain not just why a change works but why it's wrong, or
+one whose name is on code they never really held in their head — and a
+team's trust erodes the same way individual comprehension does, quietly,
+one ungated merge at a time.
 
 ## Install
 
